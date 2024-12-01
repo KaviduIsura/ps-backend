@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const sensorDataSchema = new mongoose.Schema({
+const sensorDataSchema = mongoose.Schema({
   temperature: {
     type: Number,
     required: true,
