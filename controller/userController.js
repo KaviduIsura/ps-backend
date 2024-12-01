@@ -17,3 +17,16 @@ export async function createUser(req, res) {
     });
   }
 }
+
+export async function getUsers(req, res) {
+  try {
+    const users = await User.find({});
+    res.json({
+      list: users,
+    });
+  } catch (error) {
+    res.json({
+      message: error.message,
+    });
+  }
+}
