@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import sensorRouter from "./router/sensorRouter.js";
+import userRouter from "./router/userRouter.js";
 
 dotenv.config();
 const app = express();
@@ -22,6 +23,7 @@ connection.once("open", () => {
 
 // Routes
 app.use("/api/sensor", sensorRouter);
+app.use("/api/users", userRouter);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
