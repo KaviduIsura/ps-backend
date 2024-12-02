@@ -15,6 +15,6 @@ const sensorDataSchema2 = mongoose.Schema({
   },
 });
 
-const SensorData2 = mongoose.model("SensorData", sensorDataSchema2);
+const SensorData2 = mongoose.model("SensorData2", sensorDataSchema2);
 
 export default SensorData2;
