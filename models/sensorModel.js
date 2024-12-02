@@ -9,7 +9,7 @@ const sensorDataSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
-  soilMoisture: {
+  lightIntensity: {
     type: Number,
     required: true,
   },
