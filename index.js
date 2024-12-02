@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import sensorRouter from "./router/sensorRouter.js";
 import userRouter from "./router/userRouter.js";
+import sensorRouter2 from "./router/sensorRouter2.js";
 
 dotenv.config();
 const app = express();
@@ -24,6 +25,7 @@ connection.once("open", () => {
 // Routes
 app.use("/api/sensor", sensorRouter);
 app.use("/api/users", userRouter);
+app.use("/api/sensor2", sensorRouter2);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
