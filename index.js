@@ -6,6 +6,7 @@ import cors from "cors";
 import sensorRouter from "./router/sensorRouter.js";
 import userRouter from "./router/userRouter.js";
 import sensorRouter2 from "./router/sensorRouter2.js";
+import controlRouter from "./router/controlRouter.js";
 
 dotenv.config();
 const app = express();
@@ -28,6 +29,7 @@ connection.once("open", () => {
 app.use("/api/sensor", sensorRouter);
 app.use("/api/users", userRouter);
 app.use("/api/sensor2", sensorRouter2);
+app.use("/api/control", controlRouter);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
