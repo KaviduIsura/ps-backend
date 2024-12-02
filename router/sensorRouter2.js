@@ -1,5 +1,5 @@
 import express from "express";
-import { saveSensorData } from "../controller/sensorController2";
+import { saveSensorData } from "../controller/sensorController2.js";
 
 const sensorRouter2 = express.Router();
 
