@@ -14,3 +14,16 @@ export const saveSensorData = async (req, res) => {
       .json({ message: "Failed to save data", error: err.message });
   }
 };
+
+export async function getSensorData(req, res) {
+  try {
+    const sensors = await SensorData2.find();
+    res.json({
+      list: sensors,
+    });
+  } catch (error) {
+    res.json({
+      message: error.message,
+    });
+  }
+}
