@@ -2,6 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import cors from "cors";
 import sensorRouter from "./router/sensorRouter.js";
 import userRouter from "./router/userRouter.js";
 import sensorRouter2 from "./router/sensorRouter2.js";
@@ -10,6 +11,7 @@ dotenv.config();
 const app = express();
 
 // Middleware
+app.use(cors());
 app.use(bodyParser.json());
 
 // Connect to MongoDB
