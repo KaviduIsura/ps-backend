@@ -9,8 +9,8 @@ import sensorRouter2 from "./router/sensorRouter2.js";
 import controlRouter from "./router/controlRouter.js";
 import controlRouter2 from "./router/controlRouter2.js";
 
+import app from "./app.js";
 dotenv.config();
-const app = express();
 
 // Middleware
 app.use(cors());
@@ -37,5 +37,3 @@ const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
-
-export default app;
