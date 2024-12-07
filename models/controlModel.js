@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+//get stautes of thermometer, humidity and light
 const controlSchema = new mongoose.Schema(
   {
     fan1: { type: Boolean, default: false },
