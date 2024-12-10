@@ -9,10 +9,6 @@ export const getControlStates = async (req, res) => {
         fan1: false,
         fan2: false,
         led: false,
-        manual: false,
-        manualFan1: false,
-        manualFan2: false,
-        manualLed: false,
       }); // Default state
     }
     res.status(200).json(control);
@@ -24,15 +20,12 @@ export const getControlStates = async (req, res) => {
 // Update the control states
 export const updateControlStates = async (req, res) => {
   try {
-    const { fan1, fan2, led, manual, manualFan1, manualFan2, manualLed } = req.body;
+    const { fan1, fan2, led, manual, manualFan1, manualFan2, manualLed } =
+      req.body;
     const newControl = new Control({
       fan1,
       fan2,
       led,
-      manual,
-      manualFan1,
-      manualFan2,
-      manualLed,
     });
     await newControl.save();
     res
