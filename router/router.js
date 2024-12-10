@@ -32,10 +32,10 @@ router.get("/control", getControlStates1);
 // Route to update the control states
 router.post("/control", updateControlStates1);
 
-// Route to get the current control states
+// Route to get the current control states for second controller
 router.get("/control2", getControlStates2);
 
-// Route to update the control states
+// Route to update the control states for second controller
 router.post("/control2", updateControlStates2);
 
 router.post("/sensor", saveSensorData);

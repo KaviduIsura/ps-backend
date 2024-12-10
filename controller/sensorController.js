@@ -27,3 +27,14 @@ export async function getSensorData(req, res) {
     });
   }
 }
+
+const getLatestSensorData = async (req, res) => {
+  try {
+    const latestData = await SensorData.findOne().sort({ timestamp: -1 }); // Sort by timestamp descending
+    res.status(200).json(latestData);
+  } catch (error) {
+    res.status(500).json({ message: "Failed to fetch sensor data", error });
+  }
+};
+
+export default getLatestSensorData;
