@@ -4,6 +4,7 @@ const controlSchema2 = new mongoose.Schema(
   {
     valve: { type: Boolean, default: false },
     led: { type: Boolean, default: false },
+    manualValve: { type: Boolean, default: false },
   },
   { timestamps: true }
 );
