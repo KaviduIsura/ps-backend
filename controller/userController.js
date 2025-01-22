@@ -35,13 +35,23 @@ export function userLogin(req, res) {
         const token = jwt.sign(
           {
             email: user.email,
-            name: user.name,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            phoneNumber: user.phoneNumber,
+            address: user.address,
           },
           process.env.SECRETE
         );
         res.json({
           message: "User Logged in",
           token: token,
+          user: {
+            email: user.email,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            phoneNumber: user.phoneNumber,
+            address: user.address,
+          },
         });
       } else {
         res.json({

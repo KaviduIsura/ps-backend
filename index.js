@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
+import jwt from "jsonwebtoken";
 import controlRouter1 from "./router/controleRouter1.js";
 import controlRouter2 from "./router/controlRouter2.js";
 import sensorRouter1 from "./router/sensorRouter1.js";
