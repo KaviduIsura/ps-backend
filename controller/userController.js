@@ -75,3 +75,39 @@ export async function getUsers(req, res) {
     });
   }
 }
+
+export function deleteUser(req, res) {
+  const id = req.params.id;
+
+  User.deleteOne({ _id: id })
+    .then(() => {
+      res.json({
+        message: "User deleted",
+      });
+    })
+    .catch((error) => {
+      res.status(403).json({
+        message: error,
+      });
+    });
+}
+
+//update User
+export default function updateUser(req, res) {
+  const userId = req.params._id;
+  const newUserData = req.body;
+
+  console.log("User ID:", userId);
+
+  User.updateOne({ userId: userId }, newUserData)
+    .then(() => {
+      res.status(200).json({
+        message: "User updated",
+      });
+    })
+    .catch((error) => {
+      res.status(403).json({
+        message: error,
+      });
+    });
+}
